@@ -1,6 +1,5 @@
-"use client";
-import { Fragment, useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { SentenceRotator } from "../components/SenteceRotator";
 import Button from "../components/Button";
