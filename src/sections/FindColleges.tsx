@@ -1,5 +1,3 @@
-import React from "react";
-
 const FindColleges = () => {
 	return (
 		<div className="py-10">

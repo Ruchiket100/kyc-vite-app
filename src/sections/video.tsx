@@ -1,5 +1,3 @@
-import React from "react";
-
 const Video = () => {
 	return (
 		<div className="relative aspect-video bg-[#2D2D2D] p-8 flex items-center justify-center">
