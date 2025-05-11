@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { SentenceRotator } from "../components/SenteceRotator";
 import Button from "../components/Button";
+import FindMentors from "../sections/FindMentors";
+import AppretiationWall from "../sections/AppretiationWall";
+import Video from "../sections/video";
+import FindColleges from "../sections/FindColleges";
+import LatestUpdates from "../sections/LatestUpdates";
+import OurSocials from "../sections/OurSocials";
+import Footer from "../sections/Footer";
 
 export default function Home() {
 	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -122,7 +129,7 @@ export default function Home() {
 						animate={
 							!isMobile && showOverlay
 								? {
-										left: "10rem",
+										left: "9.7rem",
 										x: 0,
 										y: isMobile ? "30%" : "-63%",
 										top: isMobile ? "15rem" : "18rem",
@@ -285,6 +292,13 @@ export default function Home() {
 					/>
 				)}
 			</div>
+			<FindMentors />
+			<AppretiationWall />
+			<Video />
+			<FindColleges />
+			<LatestUpdates />
+			<OurSocials />
+			<Footer />
 		</section>
 	);
 }
