@@ -1,6 +1,3 @@
-import { useEffect, useMemo, useState } from "react";
-import { useMediaQuery } from "react-responsive";
-
 import FindMentors from "../sections/FindMentors";
 import AppretiationWall from "../sections/AppretiationWall";
 import Video from "../sections/video";
