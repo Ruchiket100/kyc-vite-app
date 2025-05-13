@@ -17,7 +17,7 @@ const Hero = () => {
 
 		const overlayTimer = setTimeout(() => {
 			setShowOverlay(true);
-		}, 2500); // after caps finish falling
+		}, 2000);
 
 		return () => {
 			clearTimeout(fallTimer);
@@ -76,7 +76,7 @@ const Hero = () => {
 						Courses
 					</p>
 					<motion.div
-						initial={{ x: 0, y: 0 }}
+						initial={{ x: "9vw", y: "5vh" }}
 						animate={
 							showOverlay
 								? { x: "-0.4rem", y: 0 }
@@ -159,12 +159,10 @@ const Hero = () => {
 						ease: "easeInOut",
 						delay: 0.5,
 					}}
-					onAnimationComplete={() =>
-						setTimeout(() => setStartRotate(true), 200)
-					}
+					onAnimationComplete={() => setStartRotate(true)}
 				>
 					<motion.g
-						animate={startRotate ? { rotate: 8 } : {}}
+						animate={startRotate ? { rotate: 4 } : {}}
 						transition={{
 							type: "spring",
 							stiffness: 100,

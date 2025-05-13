@@ -67,7 +67,7 @@ const AppretiationWall = () => {
 		>
 			<div className="flex flex-col gap-4 items-center">
 				<h1 className="text-5xl font-bold">
-					Appretiation
+					Appreciation
 					<br />
 					<span className="flex gap-6 items-center">
 						Wall
@@ -108,12 +108,13 @@ const AppretiationWall = () => {
 									<p className="text-md px-14">
 										{appreciation.appreciation}
 									</p>
-									<div className="text-gray-500">
+									<div className="text-secondary-text">
 										<h3 className="text-sm ">
 											{appreciation.name}
 										</h3>
 										<div className="text-xs">
-											{appreciation.degree} |{" "}
+											{appreciation.degree}{" "}
+											<span className="font-bold">|</span>{" "}
 											{appreciation.college}
 										</div>
 									</div>

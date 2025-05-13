@@ -55,16 +55,22 @@ export default function Footer() {
 			<br />
 			<br />
 			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
 			{/* Background Text */}
 			<motion.div
 				initial={{ y: 100, opacity: 0 }}
 				whileInView={{ y: 20, opacity: 0.1 }}
 				transition={{ duration: 1, ease: "easeOut" }}
 				viewport={{ once: true }}
-				className="absolute bottom-0 left-0 w-full text-center text-[120px] font-extrabold text-white opacity-10 tracking-tight select-none"
+				className="absolute bottom-0 left-0 w-full text-center tracking-[-0.5rem] text-[120px] font-extrabold text-white opacity-10 select-none"
 				style={{
-					fontSize: "7vw",
+					fontSize: "vw",
 					lineHeight: "1",
+					scaleY: 1.5,
 				}}
 			>
 				KNOW YOUR COLLEGES

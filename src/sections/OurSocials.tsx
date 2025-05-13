@@ -41,17 +41,22 @@ export default function OurSocials() {
 		<div className="flex flex-col md:flex-row aspect-video items-center justify-center gap-12 p-10 px-30 bg-green-200 rounded-lg">
 			{/* Left side - Dots and Labels */}
 			<div className="flex flex-col items-start text-left">
-				<h1 className="text-6xl font-bold leading-tight mb-6">
-					OUR~
+				<h1 className="text-[96px] text-right font-bold leading-tight mb-6">
+					OU
 					<br />
-					SOCIALS
+					R~
+					<br />
+					SOC
+					<br />
+					IALS
 				</h1>
 
-				<div className="flex flex-col items-start gap-4 mt-2 ml-2">
+				<div className="flex flex-col items-start relative gap-4 mt-2 ml-2">
+					<div className="w-[2px] h-full absolute ml-[5px] mb-2 bg-gray-400 "></div>
 					{socials.map((social, index) => (
 						<div
 							key={index}
-							className="flex items-center gap-3 cursor-pointer"
+							className="flex z-10 items-center gap-3 cursor-pointer"
 							onClick={() => handleDotClick(index)}
 						>
 							<div
@@ -62,15 +67,13 @@ export default function OurSocials() {
 								}`}
 							/>
 							<span
-								className={`text-xl flex items-center gap-2 font-medium ${
+								className={`text-2xl flex items-center gap-2 font-medium ${
 									currentIndex === index
 										? "text-black"
 										: "text-gray-600"
 								}`}
 							>
-								<i
-									className={`${social.iconClass} text-lg`}
-								></i>
+								<i className={`${social.iconClass} `}></i>
 								{social.platform}
 							</span>
 						</div>
