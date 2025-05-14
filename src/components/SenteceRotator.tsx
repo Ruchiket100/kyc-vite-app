@@ -30,7 +30,7 @@ export const SentenceRotator = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: direction === "up" ? -150 : 150, opacity: 0 }}
 					transition={{ duration: 0.8, ease: "easeInOut" }}
-					className="absolute w-full text-4xl font-extrabold text-end"
+					className="absolute w-full text-5xl font-extrabold text-end"
 				>
 					{sentences[activeIndex].split("\n").map((line, i) => (
 						<span key={i} className="block">

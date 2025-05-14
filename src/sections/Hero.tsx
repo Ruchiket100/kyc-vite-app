@@ -66,7 +66,7 @@ const Hero = () => {
 			<div className="relative  w-full h-full z-[100]">
 				<div className=" z-30 w-full h-full mt-14">
 					<p
-						className={`text-black md:text-xl pb-4 transition-all duration-200 ${
+						className={`text-black md:text-2xl pb-4 transition-all duration-200 ${
 							showOverlay
 								? "visible opacity-100 translate-y-0"
 								: "invisible opacity-0 -translate-y-10"
@@ -88,9 +88,9 @@ const Hero = () => {
 						}}
 						className="z-[990] pointer-events-none flex"
 					>
-						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-[4rem] md:text-[147px]">
+						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-[20rem] md:text-[147px]">
 							know your <br />
-							<span className="font-[900] text-[5rem] md:text-[197px]">
+							<span className="font-[900] text-[21rem] md:text-[197px]">
 								colleges
 							</span>
 						</h1>
@@ -100,7 +100,7 @@ const Hero = () => {
 					<br />
 					<div className="relative mt-auto flex items-center justify-between">
 						<button
-							className={`gap-2 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-xl border border-black duration-200  transition-all cursor-pointer ${
+							className={`gap-2 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${
 								showOverlay
 									? "visible opacity-100"
 									: "invisible opacity-0"
