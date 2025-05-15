@@ -255,7 +255,7 @@ const FindMentors = () => {
 								>
 									<div className="absolute bottom-0 z-20 w-full ">
 										<div className="flex bg-white text-start flex-col mx-4 p-4 gap-1 transtion-all cursor-pointer">
-											<div className="hidden items-center gap-4 group-hover:flex">
+											<div className="hidden items-center gap-2 group-hover:flex">
 												<span className="text-sm font-semibold">
 													Rating:
 												</span>
@@ -266,7 +266,7 @@ const FindMentors = () => {
 															return (
 																<i
 																	key={i}
-																	className="fas fa-star text-accent text-xs"
+																	className="fad fa-star text-secondary text-xs"
 																/>
 															);
 														})}

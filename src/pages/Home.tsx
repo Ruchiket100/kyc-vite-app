@@ -11,11 +11,10 @@ import Hero from "../sections/Hero";
 export default function Home() {
 	return (
 		<section className="w-screen overflow-hidden">
-			{/* Top Header */}
+			s{/* Top Header */}
 			<Header />
 			<Hero />
 			{/* Hero Section */}
-
 			<FindMentors />
 			<AppretiationWall />
 			<Video />
