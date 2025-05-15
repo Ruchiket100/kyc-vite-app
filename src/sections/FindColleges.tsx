@@ -161,7 +161,7 @@ const FindColleges = () => {
 	];
 
 	const [activeIndex, setActiveIndex] = useState(0);
-	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	// const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
 	const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -178,7 +178,7 @@ const FindColleges = () => {
 
 	// Scroll to the active index if not hovering
 	useEffect(() => {
-		if (hoveredIndex !== null) return;
+		// if (hoveredIndex !== null) return;
 
 		const node = cardRefs.current[activeIndex];
 		const container = scrollContainerRef.current;
@@ -195,7 +195,7 @@ const FindColleges = () => {
 				});
 			}
 		}
-	}, [activeIndex, hoveredIndex]);
+	}, [activeIndex]);
 
 	return (
 		<div className="py-10">
@@ -234,10 +234,9 @@ const FindColleges = () => {
 					ref={scrollContainerRef}
 				>
 					{dummyColleges.map((college, index) => {
-						const isActive =
-							index === activeIndex && hoveredIndex === null;
-						const isHovered = index === hoveredIndex;
-						const width = isHovered || isActive ? 708 : 354;
+						const isActive = index === activeIndex;
+						// const isHovered = index === hoveredIndex;
+						const width = isActive ? 708 : 354;
 
 						return (
 							<div
