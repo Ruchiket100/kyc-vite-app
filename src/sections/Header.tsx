@@ -4,7 +4,16 @@ const Header = () => {
 	return (
 		<div>
 			<div className="bg-secondary w-full px-4 md:px-30 flex items-center justify-between py-4 border-b-2 border-black">
-				<img src="/logo.png" alt="Logo" />
+				<div className="flex items-center gap-6">
+					<img src="/logo.png" alt="Logo" />
+					<div className="rounded-full w-[351px] bg-secondary-active border text-white border-border py-2 px-4 flex items-center">
+						<input
+							placeholder="Search"
+							className="outline-none flex-1 text-lg border-none bg-inherit"
+						/>
+						<i className="fas fa-search" />
+					</div>
+				</div>
 				<div className="flex gap-4 items-center">
 					{[
 						{ title: "Home", accent: false },
