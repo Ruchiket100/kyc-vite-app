@@ -9,6 +9,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "IIT Delhi",
 			profile_pic: "mentor1.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
 			id: "mentor2",
@@ -17,6 +20,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "Amity Delhi",
 			profile_pic: "mentor3.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
 			id: "mentor3",
@@ -25,6 +31,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "IIT Delhi",
 			profile_pic: "mentor2.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
 			id: "mentor4",
@@ -33,6 +42,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "IIT Delhi",
 			profile_pic: "mentor1.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
 			id: "mentor5",
@@ -41,6 +53,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "Amity Delhi",
 			profile_pic: "mentor3.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
 			id: "mentor6",
@@ -49,6 +64,9 @@ const FindMentors = () => {
 			branch: "Computer Science",
 			institution: "IIT Delhi",
 			profile_pic: "mentor1.png",
+			rating: 5,
+			description:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 	];
 	const [selectedMentor, setSelectedMentor] = useState<any>(null);
@@ -86,9 +104,8 @@ const FindMentors = () => {
 			}
 		};
 
-		// Run on mount and scroll
 		scrollContainer.addEventListener("scroll", handleScroll);
-		handleScroll(); // Run initially in case default scroll isn't at start
+		handleScroll();
 
 		return () => {
 			scrollContainer.removeEventListener("scroll", handleScroll);
@@ -122,54 +139,6 @@ const FindMentors = () => {
 					Advanced Filters <i className="far fa-sliders" />
 				</button>
 			</div>
-			{/* <div className="flex items-center justify-between gap-2 px-30 py-8">
-				{[
-					{
-						name: "Anant Sharama",
-						expertise: "BITSAT",
-						branch: "Computer Science",
-						institution: "Amity Delhi",
-						profile_pic: "mentor3.png",
-					},
-					{
-						name: "Karan Deb",
-						expertise: "JEE",
-						branch: "Computer Science",
-						institution: "IIT Delhi",
-						profile_pic: "mentor2.png",
-					},
-					{
-						name: "Anamika Sharma",
-						expertise: "JEE",
-						branch: "Computer Science",
-						institution: "IIT Delhi",
-						profile_pic: "mentor1.png",
-					},
-				].map((mentor, index) => (
-					<div
-						key={index}
-						className={`relative w-[300px] h-[400px] bg-white rounded-lg shadow-lg overflow-hidden`}
-					>
-						<div className="absolute bottom-0 z-20 w-full">
-							<div className="flex bg-white flex-col mx-4 p-4 gap-1">
-								<h3 className="text-2xl font-bold">
-									{mentor.name}
-								</h3>
-								<div className="flex text-xs items-center gap-2">
-									<p>{mentor.branch}</p>
-									<p>{mentor.institution}</p>
-								</div>
-								<p className="text-xs">{mentor.expertise}</p>
-							</div>
-						</div>
-						<img
-							src={`/mentors/${mentor.profile_pic}`}
-							alt={`${mentor.name}'s profile`}
-							className="absolute top-0 w-full h-full object-cover"
-						/>
-					</div>
-				))}
-			</div> */}
 			<div className="flex flex-col gap-4">
 				<div className="flex items-center justify-center gap-8 pt-8">
 					<button
@@ -257,7 +226,7 @@ const FindMentors = () => {
 				</div>
 				<div
 					ref={mentorScrollRef}
-					className="scrollbar-hide relative w-full h-[600px] overflow-auto flex items-center snap-x snap-mandatory gap-[150px] pl-[170px] pr-[calc((50vw-10px))]"
+					className="scrollbar-hide relative w-full h-[600px] overflow-auto flex items-center snap-x snap-mandatory gap-[150px] px-[calc((50vw-10px))]"
 				>
 					{dummyMentors?.length !== 0 &&
 						dummyMentors?.map((mentor, index) => {
@@ -269,7 +238,7 @@ const FindMentors = () => {
 								<button
 									key={index}
 									id={mentor.id}
-									className={`mentor transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
+									className={`mentor group transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
 									${
 										index === selectedIndex + 1 ||
 										index === selectedIndex - 1
@@ -284,18 +253,47 @@ const FindMentors = () => {
 										console.log("Hello World");
 									}}
 								>
-									<div className="absolute bottom-0 z-20 w-full">
-										<div className="flex bg-white flex-col mx-4 p-4 gap-1">
-											<h3 className="text-2xl font-bold">
+									<div className="absolute bottom-0 z-20 w-full ">
+										<div className="flex bg-white text-start flex-col mx-4 p-4 gap-1 transtion-all cursor-pointer">
+											<div className="hidden items-center gap-4 group-hover:flex">
+												<span className="text-sm font-semibold">
+													Rating:
+												</span>
+												<div className="flex items-center gap-1">
+													{Array(mentor.rating)
+														.fill(0)
+														.map((_, i) => {
+															return (
+																<i
+																	key={i}
+																	className="fas fa-star text-accent text-xs"
+																/>
+															);
+														})}
+												</div>
+											</div>
+											<h3 className="text-2xl font-bold flex items-center">
 												{mentor.name}
+												<i className="fas fa-badge-check text-xs pl-1 pb-4 text-accent" />
 											</h3>
-											<div className="flex text-xs items-center gap-2">
+											<div className="flex text-sm items-center gap-2 font-light">
 												<p>{mentor.branch}</p>
 												<p>{mentor.institution}</p>
 											</div>
-											<p className="text-xs">
+											<p className="text-sm font-light flex items-center gap-2">
+												<span className="font-semibold">
+													Expertise:
+												</span>
 												{mentor.expertise}
 											</p>
+											<div className="hidden transition-all flex-col gap-4 pt-2 group-hover:flex">
+												<p className="text-sm font-light text-start">
+													{mentor.description}
+												</p>
+												<button className="py-2 w-full text-sm font-regular text-center hover:bg-accent transition-all bg-accent-active rounded-xl">
+													View
+												</button>
+											</div>
 										</div>
 									</div>
 									<img
