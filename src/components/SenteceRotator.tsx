@@ -21,7 +21,7 @@ export const SentenceRotator = () => {
 	}, []);
 
 	return (
-		<div className="relative h-[120px] w-[400px] overflow-hidden">
+		<div className="relative h-[190px] w-[600px] overflow-hidden">
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={activeIndex}
