@@ -269,7 +269,7 @@ const FindColleges = () => {
 											<i className="fas fa-star text-yellow-300" />
 										</div>
 									</div>
-									<div className="flex items-center justify-between">
+									<div className="hidden group-hover:flex transition-all items-center justify-between">
 										<p className="flex items-center gap-2 text-sm font-light">
 											<i className="far fa-location-dot" />
 											{college.location}
@@ -281,7 +281,7 @@ const FindColleges = () => {
 											</span>
 										</div>
 									</div>
-									<div className="hidden flex-col gap-2 group-hover:flex transition-all">
+									<div className="hidden flex-col gap-2 ">
 										<h2>Top Mentors</h2>
 										<div className="flex items-center gap-2">
 											{college.top_mentors.map(
