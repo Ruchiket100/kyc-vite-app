@@ -171,7 +171,7 @@ const FindColleges = () => {
 			setActiveIndex(
 				(prevIndex) => (prevIndex + 1) % dummyColleges.length
 			);
-		}, 3000);
+		}, 5000);
 
 		return () => clearInterval(interval);
 	}, []);
@@ -245,8 +245,8 @@ const FindColleges = () => {
 								ref={(el) =>
 									(cardRefs.current[index] = el) as any
 								}
-								onMouseEnter={() => setHoveredIndex(index)}
-								onMouseLeave={() => setHoveredIndex(null)}
+								onMouseEnter={() => setActiveIndex(index)}
+								// onMouseLeave={() => setHoveredIndex(null)}
 								className="group shrink-0 transition-all duration-500 ease-in-out relative rounded-lg overflow-hidden"
 								style={{
 									width,
