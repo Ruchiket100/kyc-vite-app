@@ -38,7 +38,7 @@ export default function OurSocials() {
 	};
 
 	return (
-		<div className="flex flex-col md:flex-row aspect-video items-center justify-center gap-12 p-10 px-30 bg-green-200 rounded-lg">
+		<div className="flex flex-col overflow-hidden md:flex-row aspect-video items-center justify-center gap-12 p-10 px-30 bg-green-200 rounded-lg">
 			{/* Left side - Dots and Labels */}
 			<div className="flex flex-col items-start text-left">
 				<h1 className="text-[96px] text-right font-bold leading-tight mb-6">

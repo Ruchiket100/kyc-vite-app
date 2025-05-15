@@ -11,7 +11,7 @@ const Header = () => {
 							placeholder="Search"
 							className="outline-none flex-1 text-lg border-none bg-inherit"
 						/>
-						<i className="fas fa-search" />
+						<i className="fas fa-search text-lg" />
 					</div>
 				</div>
 				<div className="flex gap-4 items-center">
