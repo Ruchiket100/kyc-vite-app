@@ -280,7 +280,7 @@ const FindColleges = () => {
 											</span>
 										</div>
 									</div>
-									<div className="hidden flex-col gap-2 ">
+									<div className="hidden group-hover:flex transition-all flex-col gap-2 ">
 										<h2>Top Mentors</h2>
 										<div className="flex items-center gap-2">
 											{college.top_mentors.map(
