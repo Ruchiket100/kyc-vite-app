@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, scale } from "framer-motion";
 import { SentenceRotator } from "../components/SenteceRotator";
 import { useMediaQuery } from "react-responsive";
 
@@ -8,46 +8,101 @@ const Hero = () => {
 	const [startFall, setStartFall] = useState(false);
 	const [showOverlay, setShowOverlay] = useState(false);
 	const [startRotate, setStartRotate] = useState(false);
-	const TOTAL_CAPS = isMobile ? 10 : 25;
 
 	useEffect(() => {
 		const fallTimer = setTimeout(() => {
 			setStartFall(true);
 		}, 1000);
-
 		const overlayTimer = setTimeout(() => {
 			setShowOverlay(true);
 		}, 2000);
-
 		return () => {
 			clearTimeout(fallTimer);
 			clearTimeout(overlayTimer);
 		};
 	}, []);
 
-	const capData = useMemo(() => {
-		return Array.from({ length: TOTAL_CAPS }).map((_, i) => {
-			const lane = (i % 10) * 10 + Math.random() * 5;
-			const verticalOffset = Math.random() * 50;
-			const rotate = 10;
-			const size = Math.random() < 0.5 ? 14 : 16;
-			const scale = size === 14 ? 0.8 : 1;
-			const opacity = size === 14 ? 0.5 : 1;
-			const duration = size === 14 ? 2.5 : 2;
-			const capType = Math.floor(Math.random() * 2) + 1;
+	const capsData = [
+		{
+			left: -8, // vw
+			top: 40, // vh
+			url: "/caps/cap-1.png",
+			duration: 2,
+		},
+		{
+			left: -3, // vw
+			top: 10, // vh
+			url: "/caps/cap-1.png",
+			duration: 2,
+		},
+		{
+			left: 75, // vw
+			top: 10, // vh
+			url: "/caps/cap-1.png",
+			duration: 2,
+		},
+		{
+			left: 60, // vw
+			top: 60, // vh
+			url: "/caps/cap-1.png",
+			duration: 2,
+		},
+		{
+			left: 40,
+			top: 20,
+			url: "/caps/cap-2.png",
+			duration: 2,
+		},
 
-			return {
-				left: lane,
-				top: verticalOffset,
-				rotate,
-				scale,
-				opacity,
-				duration,
-				capType,
-				size,
-			};
-		});
-	}, []);
+		{
+			left: -20,
+			top: 10,
+			url: "/caps/cap-2.png",
+			duration: 2,
+		},
+		{
+			left: 5,
+			top: 30,
+			url: "/caps/cap-4.png",
+			duration: 2.7,
+		},
+		{
+			left: 30,
+			top: 0,
+			url: "/caps/cap-4.png",
+			duration: 2.7,
+		},
+		{
+			left: 50,
+			top: -35,
+			url: "/caps/cap-4.png",
+			duration: 2,
+		},
+		{
+			left: 70,
+			top: 40,
+			url: "/caps/cap-5.png",
+			duration: 2.3,
+		},
+		{
+			left: 15,
+			top: 0,
+			url: "/caps/cap-5.png",
+			duration: 2.3,
+		},
+		{
+			left: 40,
+			top: 60,
+			url: "/caps/cap-6.png",
+			duration: 2.1,
+		},
+		{
+			left: 40,
+			top: -10,
+			url: "/caps/cap-6.png",
+			duration: 2.1,
+		},
+	];
 
 	useEffect(() => {
 		const startTimer = setTimeout(() => setStartFall(true), 1000);
@@ -198,32 +253,24 @@ const Hero = () => {
 					className="absolute bottom-0 left-0 w-full  bg-accent z-[20]"
 				/>
 			)}
-			{capData.map((cap, i) => (
+			{capsData.map((cap, i) => (
 				<motion.div
 					key={i}
 					className="absolute"
 					style={{
 						left: `${cap.left}vw`,
 						top: `${cap.top}vh`,
-						transform: `scale(${cap.scale})`,
-						opacity: cap.opacity,
 					}}
-					initial={{ y: -200, rotate: 0 }}
+					initial={{ y: -200 }}
 					animate={
-						startFall
-							? { y: 800, rotate: cap.rotate }
-							: { y: 0, rotate: 0 }
+						startFall ? { y: 800, rotate: 0 } : { y: 0, rotate: 0 }
 					}
 					transition={{
 						duration: cap.duration,
 						ease: [0.42, 0, 1, 1],
 					}}
 				>
-					<img
-						src={`/captype-${cap.capType}.svg`}
-						alt="cap"
-						className="w-full h-auto"
-					/>
+					<img src={cap.url} alt="cap" className="w-full h-auto" />
 				</motion.div>
 			))}
 			{showOverlay && (

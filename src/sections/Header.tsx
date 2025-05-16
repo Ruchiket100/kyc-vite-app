@@ -28,7 +28,7 @@ const Header = () => {
 							key={index}
 							icon={item.icon}
 							accent={item.accent}
-							className={`${
+							className={`text-lg ${
 								!!item.accent ? " " : "hidden md:flex"
 							}`}
 						>
