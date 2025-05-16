@@ -11,7 +11,7 @@ import Hero from "../sections/Hero";
 export default function Home() {
 	return (
 		<section className="w-screen overflow-hidden">
-			s{/* Top Header */}
+			{/* Top Header */}
 			<Header />
 			<Hero />
 			{/* Hero Section */}
