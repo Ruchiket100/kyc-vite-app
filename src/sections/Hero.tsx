@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 import { SentenceRotator } from "../components/SenteceRotator";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
-	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+	// const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 	const [startFall, setStartFall] = useState(false);
 	const [showOverlay, setShowOverlay] = useState(false);
 	const [startRotate, setStartRotate] = useState(false);
