@@ -28,7 +28,10 @@ const Header = () => {
 							},
 							{ title: "College Predictors", icon: "sign-post" },
 						].map((item, index) => (
-							<button className="flex items-center gap-4 text-md font-medium">
+							<button
+								key={index}
+								className="flex items-center gap-4 text-md font-medium"
+							>
 								<i className={`far fa-${item.icon}`} />
 								{item.title}
 							</button>

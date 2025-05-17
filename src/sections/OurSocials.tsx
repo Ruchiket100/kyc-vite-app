@@ -83,7 +83,7 @@ export default function OurSocials() {
 			</div>
 
 			{/* Right side - Image Animation */}
-			<div className="relative h-[400px] md:translate-x-[200px]">
+			<div className="relative h-full md:translate-x-[20px]">
 				<AnimatePresence mode="wait">
 					<motion.a
 						key={currentIndex}
@@ -91,7 +91,7 @@ export default function OurSocials() {
 						target="_blank"
 						rel="noopener noreferrer"
 						initial={{ opacity: 0, y: 100 }}
-						animate={{ opacity: 1, y: 0 }}
+						animate={{ opacity: 1, y: 40 }}
 						exit={{ opacity: 0, y: -50 }}
 						transition={{ duration: 0.8 }}
 						className="block"

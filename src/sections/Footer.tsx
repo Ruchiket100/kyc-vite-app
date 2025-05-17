@@ -60,8 +60,8 @@ export default function Footer() {
 			<br />
 			<br />
 			<br />
-			<br />
-			<br />
+			<br className="md:block hidden" />
+			<br className="md:block hidden" />
 
 			{/* Background Text */}
 			<motion.div
@@ -69,7 +69,7 @@ export default function Footer() {
 				whileInView={{ y: 10, opacity: 0.1 }}
 				transition={{ duration: 1, ease: "easeOut" }}
 				viewport={{ once: true }}
-				className="absolute bottom-0 left-0 w-full text-center tracking-[-0.5rem] text-[9vw] font-extrabold text-white opacity-10 select-none"
+				className="absolute bottom-0 left-0 w-full text-center tracking-[-0.3rem]  md:tracking-[-0.5rem] text-[10vw] md:text-[9vw] font-extrabold text-white opacity-10 select-none"
 				style={{
 					fontSize: "vw",
 					lineHeight: "1",
