@@ -249,7 +249,7 @@ const FindMentors = () => {
 									onMouseLeave={() => setHovered(null)}
 									key={index}
 									id={mentor.id}
-									className={`mentor overflow-hidden transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
+									className={`mentor rounded-lg overflow-hidden transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
 									${
 										index === selectedIndex + 1 ||
 										index === selectedIndex - 1
@@ -264,21 +264,23 @@ const FindMentors = () => {
 									}}
 								>
 									{!isActive && (
-										<div className="mx-4 absolute bottom-0 z-20 flex bg-white text-start flex-col  p-4 gap-1 transtion-all cursor-pointer">
-											<h3 className="text-2xl font-bold flex items-center">
-												{mentor.name}
-												<i className="fas fa-badge-check text-xs pl-1 pb-4 text-accent" />
-											</h3>
-											<div className="flex text-sm items-center gap-2 font-light">
-												<p>{mentor.branch}</p>
-												<p>{mentor.institution}</p>
+										<div className=" w-full absolute bottom-0 z-20 ">
+											<div className="mx-4 flex bg-white text-start flex-col p-4 px-6 gap-1 transtion-all cursor-pointer">
+												<h3 className="text-2xl font-bold flex items-center ">
+													{mentor.name}
+													<i className="fas fa-badge-check text-xs pl-1 pb-4 text-accent" />
+												</h3>
+												<div className="flex text-sm items-center gap-2 font-light">
+													<p>{mentor.branch}</p>
+													<p>{mentor.institution}</p>
+												</div>
+												<p className="text-sm font-light flex items-center gap-2">
+													<span className="font-semibold">
+														Expertise:
+													</span>
+													{mentor.expertise}
+												</p>
 											</div>
-											<p className="text-sm font-light flex items-center gap-2">
-												<span className="font-semibold">
-													Expertise:
-												</span>
-												{mentor.expertise}
-											</p>
 										</div>
 									)}
 									<motion.div
@@ -294,7 +296,7 @@ const FindMentors = () => {
 											ease: "easeOut",
 										}}
 									>
-										<div className="flex bg-white text-start flex-col mx-4 p-4 gap-1 transtion-all cursor-pointer">
+										<div className="flex bg-white text-start flex-col mx-4 p-4 px-6 gap-1 transtion-all cursor-pointer">
 											{/* Rating - only visible when active */}
 											<div
 												className={`${

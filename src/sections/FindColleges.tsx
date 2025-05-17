@@ -202,7 +202,7 @@ const FindColleges = () => {
 		<div className="py-10">
 			<div className="flex items-center justify-between px-30">
 				<h1 className="text-5xl font-bold">Find Colleges -</h1>
-				<button className="flex items-center gap-4 bg-accent rounded-full px-8 py-2">
+				<button className="uppercase flex text-lg font-[600] items-center gap-4 bg-accent rounded-full px-10 py-2">
 					View All
 					<i className="far fa-graduation-cap" />
 				</button>
@@ -263,17 +263,18 @@ const FindColleges = () => {
 								<div className="absolute  flex flex-col gap-4 p-4 w-[70%] left-[15%] bottom-0 text-xl bg-white rounded-t-md">
 									<div className="flex items-center justify-between">
 										<p>{college.name}</p>
-										<div className="flex items-center gap-2">
-											<p>
-												Rating:{" "}
-												<strong>
-													{college.rating}
-												</strong>
-											</p>
-											<i className="fas fa-star text-yellow-300" />
-										</div>
+										{isActive && (
+											<div className="flex items-center gap-2">
+												<p>
+													Rating:{" "}
+													<strong>
+														{college.rating}
+													</strong>
+												</p>
+												<i className="fas fa-star text-yellow-300" />
+											</div>
+										)}
 									</div>
-									{/* Show hovered content only if hovered and active */}
 									{index === activeIndex &&
 										hovered === index && (
 											<motion.div

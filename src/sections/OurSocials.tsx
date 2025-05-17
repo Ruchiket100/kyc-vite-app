@@ -41,7 +41,7 @@ export default function OurSocials() {
 		<div className="flex flex-col overflow-hidden md:flex-row aspect-video items-center justify-center gap-12 p-10 px-30 bg-green-200 rounded-lg">
 			{/* Left side - Dots and Labels */}
 			<div className="flex flex-col items-start text-left">
-				<h1 className="text-[96px] text-right font-bold leading-tight mb-6">
+				<h1 className="text-[96px] z-10 text-right font-bold leading-tight">
 					OU
 					<br />
 					R~
@@ -50,9 +50,10 @@ export default function OurSocials() {
 					<br />
 					IALS
 				</h1>
-
-				<div className="flex flex-col items-start relative gap-4 mt-2 ml-2">
-					<div className="w-[2px] h-full absolute ml-[5px] mb-2 bg-gray-400 "></div>
+				<div className="flex flex-col items-start relative gap-4 ml-43 -translate-y-8">
+					<div className="w-[2px] h-full absolute ml-[7px] mb-2 bg-black "></div>
+					<br />
+					<br />
 					{socials.map((social, index) => (
 						<div
 							key={index}
@@ -60,14 +61,14 @@ export default function OurSocials() {
 							onClick={() => handleDotClick(index)}
 						>
 							<div
-								className={`w-3 h-3 rounded-full transition-all duration-300 ${
+								className={`w-4 h-4 rounded-full transition-all duration-300 ${
 									currentIndex === index
 										? "bg-black scale-125"
-										: "bg-gray-500"
+										: "bg-black"
 								}`}
 							/>
 							<span
-								className={`text-2xl flex items-center gap-2 font-medium ${
+								className={`text-4xl flex items-center gap-2 font-medium ${
 									currentIndex === index
 										? "text-black"
 										: "text-gray-600"

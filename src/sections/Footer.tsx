@@ -7,7 +7,7 @@ export default function Footer() {
 			<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 z-10 relative">
 				{/* Left Section - Contact Info */}
 				<div>
-					<h2 className="text-2xl font-bold mb-4 flex  items-start gap-2">
+					<h2 className="text-4xl font-bold mb-4 flex  items-start gap-2">
 						<img
 							src="/logo-white.png"
 							alt="logo"
@@ -15,20 +15,20 @@ export default function Footer() {
 						/>
 						GET IN <br /> TOUCH :
 					</h2>
-					<p className="text-gray-300 mb-1">
+					<p className="text-gray-300 mb-1 text-xl">
 						email-address@gmail.com
 					</p>
-					<p className="text-gray-300">
+					<p className="text-gray-300 text-xl">
 						Noida, Uttar Pradesh 201009, IN
 					</p>
 				</div>
 
 				{/* Right Section - Important Links */}
 				<div>
-					<h2 className="text-2xl font-bold mb-4">
+					<h2 className="text-4xl font-bold mb-4">
 						IMPORTANT LINKS :
 					</h2>
-					<ul className="text-gray-300 space-y-1">
+					<ul className="text-gray-300 space-y-1 text-xl">
 						<li>
 							<a href="#" className="hover:text-white transition">
 								About Us
