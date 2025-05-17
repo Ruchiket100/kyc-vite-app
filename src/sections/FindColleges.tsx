@@ -327,7 +327,7 @@ const FindColleges = () => {
 																					mentor?.branch
 																				}
 																			</p>
-																			<p className="text-md font-light flex items-center gap-2">
+																			<p className="text-sm font-light flex items-center gap-2">
 																				<span className="font-medium">
 																					Expertise:
 																				</span>
@@ -335,7 +335,7 @@ const FindColleges = () => {
 																					mentor.expertise
 																				}
 																			</p>
-																			<button className="py-1 mt-1 rounded-full w-full flex items-center justify-center bg-white font-semibold text-md">
+																			<button className="hover:bg-accent transition-all py-1 mt-1 rounded-full w-full flex items-center justify-center bg-white font-semibold text-md">
 																				View
 																			</button>
 																		</div>
