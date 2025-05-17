@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SentenceRotator } from "../components/SenteceRotator";
-// import { useMediaQuery } from "react-responsive";git ad
+import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
-	// const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 	const [startFall, setStartFall] = useState(false);
 	const [showOverlay, setShowOverlay] = useState(false);
 	const [startRotate, setStartRotate] = useState(false);
@@ -119,7 +119,7 @@ const Hero = () => {
 			className={`relative px-4 md:px-30 flex flex-col overflow-hidden  h-[74vh] w-full bg-[#c3fddc] transition-all duration-75`}
 		>
 			<div className="relative  w-full h-full z-[100]">
-				<div className=" z-30 w-full h-full mt-14">
+				<div className=" z-30 my-auto w-full h-full mt-14">
 					<p
 						className={`text-black md:text-2xl pb-4 transition-all duration-200 ${
 							showOverlay
@@ -150,10 +150,10 @@ const Hero = () => {
 							</span>
 						</h1>
 					</motion.div>
-					<br />
-					<br />
-					<br />
-					<br />
+					<br className="hidden md:block" />
+					<br className="hidden md:block" />
+					<br className="hidden md:block" />
+					<br className="hidden md:block" />
 					<div className="relative mt-auto flex items-end justify-between">
 						<button
 							className={`gap-2 mb-8 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${

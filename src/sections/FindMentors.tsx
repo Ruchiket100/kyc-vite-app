@@ -289,7 +289,7 @@ const FindMentors = () => {
 										animate={
 											isActive
 												? { opacity: 1, y: 0 }
-												: { opacity: 1, y: 120 }
+												: { opacity: 1, y: 150 }
 										}
 										transition={{
 											duration: 0.35,
