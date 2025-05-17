@@ -83,7 +83,7 @@ const LatestUpdates = () => {
 	const data = dummyData[activeTab];
 
 	return (
-		<div className="py-30 px-30 bg-blue-300">
+		<div className="py-10 md:py-30 px-6 md:px-30 bg-blue-300">
 			<h1 className="uppercase text-4xl font-bold">Latest Updates</h1>
 			<br />
 			<div className="">
@@ -112,11 +112,11 @@ const LatestUpdates = () => {
 				</div>
 
 				{/* Cards */}
-				<div className="flex  gap-6">
+				<div className="flex flex-col items-center md:items-start md:flex-row gap-6">
 					{data.map((item) => (
 						<div
 							key={item.id}
-							className="bg-white rounded-2xl overflow-hidden shadow-md w-[300px]"
+							className="bg-white rounded-2xl overflow-hidden shadow-md w-full md:w-[300px]"
 						>
 							<div className="m-4 rounded-xl overflow-hidden bg-red-500">
 								<img

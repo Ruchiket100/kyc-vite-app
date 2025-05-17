@@ -134,7 +134,7 @@ const Hero = () => {
 						initial={{ x: "9vw", y: "5vh" }}
 						animate={
 							showOverlay
-								? { x: "-0.4rem", y: 0 }
+								? { x: isMobile ? "0" : "-0.4rem", y: 0 }
 								: { x: "9vw", y: "8vh" }
 						}
 						transition={{
@@ -143,17 +143,29 @@ const Hero = () => {
 						}}
 						className="z-[990] pointer-events-none flex"
 					>
-						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-[10vw]">
+						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-5xl md:text-[10vw]">
 							know your <br />
-							<span className="font-[900] text-[13vw] ">
+							<span className="font-[900] text-6xl md:text-[13vw] ">
 								colleges
 							</span>
 						</h1>
 					</motion.div>
-					<br className="hidden md:block" />
-					<br className="hidden md:block" />
-					<br className="hidden md:block" />
-					<br className="hidden md:block" />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
+					<br className="block md:hidden" />
 					<div className="relative mt-auto flex items-end justify-between">
 						<button
 							className={`gap-2 mb-8 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${

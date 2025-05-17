@@ -7,7 +7,7 @@ const Header = () => {
 		<div>
 			<div
 				className={`z-[99999] right-0 absolute top-0 w-[60vw] h-screen bg-secondary text-white  transition-all 
-				${!showDrawer ? "translate-x-100" : " translate-x-0"}`}
+				${!showDrawer ? "translate-x-[100%]" : " translate-x-0"}`}
 			>
 				<div className="py-4 flex items-center justify-end border-b border-border ">
 					<button
@@ -41,7 +41,7 @@ const Header = () => {
 						Login
 					</button>
 					<button className="flex text-md items-center gap-2 py-2 px-4 rounded-full bg-accent text-black font-semibold w-full">
-						<i className="far fa-user-circle text-xl" />
+						<i className="far fa-graduation-cap text-xl" />
 						Become a Mentor
 					</button>
 				</div>

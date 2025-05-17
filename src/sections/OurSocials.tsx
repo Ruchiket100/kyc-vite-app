@@ -38,10 +38,10 @@ export default function OurSocials() {
 	};
 
 	return (
-		<div className="flex flex-col overflow-hidden md:flex-row aspect-video items-center justify-center gap-12 p-10 px-30 bg-green-200 rounded-lg">
+		<div className="flex flex-col overflow-hidden md:flex-row aspect-[1/2] md:aspect-video items-center justify-center gap-12 p-10 pb-0 px-6 md:py-10 md:px-30 bg-green-200 rounded-lg">
 			{/* Left side - Dots and Labels */}
-			<div className="flex flex-col items-start text-left">
-				<h1 className="text-[96px] z-10 text-right font-bold leading-tight">
+			<div className="flex md:flex-col gap-4 md:gap-0 items-start text-left">
+				<h1 className="text-5xl md:text-[96px] z-10 text-right font-bold leading-tight">
 					OU
 					<br />
 					R~
@@ -50,7 +50,7 @@ export default function OurSocials() {
 					<br />
 					IALS
 				</h1>
-				<div className="flex flex-col items-start relative gap-4 ml-43 -translate-y-8">
+				<div className="flex flex-col items-start relative gap-4 md:ml-43 -translate-y-8">
 					<div className="w-[2px] h-full absolute ml-[7px] mb-2 bg-black "></div>
 					<br />
 					<br />
@@ -68,7 +68,7 @@ export default function OurSocials() {
 								}`}
 							/>
 							<span
-								className={`text-4xl flex items-center gap-2 font-medium ${
+								className={`text-lg md:text-4xl flex items-center gap-2 font-medium ${
 									currentIndex === index
 										? "text-black"
 										: "text-gray-600"
@@ -83,7 +83,7 @@ export default function OurSocials() {
 			</div>
 
 			{/* Right side - Image Animation */}
-			<div className="relative h-[400px] translate-x-[200px]">
+			<div className="relative h-[400px] md:translate-x-[200px]">
 				<AnimatePresence mode="wait">
 					<motion.a
 						key={currentIndex}

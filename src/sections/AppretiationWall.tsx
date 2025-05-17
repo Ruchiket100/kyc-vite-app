@@ -63,10 +63,10 @@ const AppretiationWall = () => {
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 			}}
-			className="px-30 w-full h-[50rem] flex items-center justify-center"
+			className=" md:px-30 w-full h-[50rem] flex flex-col md:flex-row items-center justify-center"
 		>
-			<div className="flex flex-col gap-4 items-center">
-				<h1 className="text-6xl font-bold">
+			<div className="flex flex-col gap-4 p-6 md:p-0 items-center">
+				<h1 className="text-2xl md:text-6xl font-bold">
 					Appreciation
 					<br />
 					<span className="flex gap-6 items-center">
@@ -96,7 +96,7 @@ const AppretiationWall = () => {
 
 							{/* Big appreciation circle with text */}
 							<div
-								className={`absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FFAE00] w-140 h-140 
+								className={`absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FFAE00] w-130 h-130 md:w-140 md:h-140 
                                     
                                     `}
 							>

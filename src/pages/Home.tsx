@@ -10,7 +10,7 @@ import Hero from "../sections/Hero";
 
 export default function Home() {
 	return (
-		<section className="w-screen overflow-hidden">
+		<section className="relative w-screen overflow-x-hidden">
 			{/* Top Header */}
 			<Header />
 			<Hero />

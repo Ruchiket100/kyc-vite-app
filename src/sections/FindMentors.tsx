@@ -116,8 +116,10 @@ const FindMentors = () => {
 
 	return (
 		<div className=" py-10">
-			<div className="flex items-center justify-between px-30">
-				<h1 className="text-5xl font-bold">Find Mentors -</h1>
+			<div className="flex items-center justify-between px-6 md:px-30">
+				<h1 className="text-xl md:text-5xl font-bold">
+					Find Mentors -
+				</h1>
 				<button className="uppercase flex text-lg font-[600] items-center gap-4 bg-accent rounded-full px-10 py-2">
 					View All
 					<i className="far fa-graduation-cap" />
@@ -125,8 +127,8 @@ const FindMentors = () => {
 			</div>
 			<br />
 			{/* filters */}
-			<div className="flex items-center justify-between py-4 bg-blue-300 px-30">
-				<div className="flex items-center gap-4">
+			<div className="flex items-center justify-between overflow-auto py-4 bg-blue-300 px-6  w-full  md:px-30">
+				<div className="flex items-center gap-4 shrink-0">
 					<div className="flex items-center gap-3">
 						<h3 className="font-bold text-lg">Filters</h3>
 						<i className="fas fa-bars-filter text-xl" />
@@ -136,13 +138,13 @@ const FindMentors = () => {
 						Courses <i className="far fa-books" />
 						<i className="pr-4 pl-2 fas fa-chevron-right font-[600] text-white" />
 					</button>
-					<button className="font-semibold px-4 rounded-full py-2 border flex gap-3 items-center border-black cursor-pointer">
+					<button className="font-semibold shrink-0 px-4 rounded-full py-2 border flex gap-3 items-center border-black cursor-pointer">
 						Institution Type{" "}
 						<i className="far fa-building-columns" />
 						<i className="pr-4 pl-2 fas fa-chevron-right font-[600] text-white" />
 					</button>
 				</div>
-				<button className="font-semibold px-4 rounded-full bg-white py-2 border flex gap-3 items-center border-black cursor-pointer">
+				<button className="ml-4 font-semibold shrink-0 px-4 rounded-full bg-white py-2 border flex gap-3 items-center border-black cursor-pointer">
 					Advanced Filters <i className="far fa-sliders" />
 				</button>
 			</div>
