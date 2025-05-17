@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const FindMentors = () => {
 	const dummyMentors = [
@@ -69,7 +70,8 @@ const FindMentors = () => {
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 	];
-	const [selectedMentor, setSelectedMentor] = useState<any>(null);
+	const [selectedMentor, setSelectedMentor] = useState<any>(dummyMentors[2]);
+	const [hovered, setHovered] = useState<number | null>(null);
 
 	const mentorScrollRef = useRef<HTMLDivElement>(null);
 
@@ -115,8 +117,8 @@ const FindMentors = () => {
 	return (
 		<div className=" py-10">
 			<div className="flex items-center justify-between px-30">
-				<h1 className="text-4xl font-extrabold">Find Mentors -</h1>
-				<button className="flex items-center gap-4 bg-accent rounded-full px-8 py-2">
+				<h1 className="text-5xl font-bold">Find Mentors -</h1>
+				<button className="uppercase flex text-lg font-[600] items-center gap-4 bg-accent rounded-full px-10 py-2">
 					View All
 					<i className="far fa-graduation-cap" />
 				</button>
@@ -125,17 +127,22 @@ const FindMentors = () => {
 			{/* filters */}
 			<div className="flex items-center justify-between py-4 bg-blue-300 px-30">
 				<div className="flex items-center gap-4">
-					<h3>Filters</h3>
-					<div className="h-full py-2 w-1 bg-gray-500"></div>
-					<button className="px-4 rounded-full py-2 border flex gap-2 items-center border-black cursor-pointer">
+					<div className="flex items-center gap-3">
+						<h3 className="font-bold text-lg">Filters</h3>
+						<i className="fas fa-bars-filter text-xl" />
+					</div>
+					<div className="h-full py-6 w-2 bg-black"></div>
+					<button className="font-semibold px-4 rounded-full py-2 border flex gap-3 items-center border-black cursor-pointer">
 						Courses <i className="far fa-books" />
+						<i className="pr-4 pl-2 fas fa-chevron-right font-[600] text-white" />
 					</button>
-					<button className="px-4 rounded-full py-2 border flex gap-2 items-center border-black cursor-pointer">
+					<button className="font-semibold px-4 rounded-full py-2 border flex gap-3 items-center border-black cursor-pointer">
 						Institution Type{" "}
 						<i className="far fa-building-columns" />
+						<i className="pr-4 pl-2 fas fa-chevron-right font-[600] text-white" />
 					</button>
 				</div>
-				<button className="px-4 rounded-full bg-white py-2 border flex gap-2 items-center border-black cursor-pointer">
+				<button className="font-semibold px-4 rounded-full bg-white py-2 border flex gap-3 items-center border-black cursor-pointer">
 					Advanced Filters <i className="far fa-sliders" />
 				</button>
 			</div>
@@ -186,8 +193,8 @@ const FindMentors = () => {
 													mentor.id ===
 													selectedMentor?.id
 											) === i
-												? "h-2 w-2 bg-gray-600"
-												: "h-1 w-1 bg-gray-700"
+												? "h-3 w-3 bg-gray-700"
+												: "h-2 w-2 bg-gray-400"
 										} `}
 									></span>
 								);
@@ -233,12 +240,16 @@ const FindMentors = () => {
 							const selectedIndex = dummyMentors?.findIndex(
 								(mentor) => mentor.id === selectedMentor?.id
 							);
+							const isActive =
+								index === selectedIndex && hovered === index;
 
 							return (
 								<button
+									onMouseEnter={() => setHovered(index)}
+									onMouseLeave={() => setHovered(null)}
 									key={index}
 									id={mentor.id}
-									className={`mentor group transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
+									className={`mentor overflow-hidden transition-all relative w-[200px] h-[300px] my-1 text-3xl snap-center font-semibold min-w-[100px] leading-normal flex items-center justify-center shrink-0 ripple p-1 
 									${
 										index === selectedIndex + 1 ||
 										index === selectedIndex - 1
@@ -248,14 +259,48 @@ const FindMentors = () => {
 											: "w-[200px] h-[300px]"
 									}
 									`}
-									onClick={() => () => {
-										//select logic here
-										console.log("Hello World");
+									onClick={() => {
+										setSelectedMentor(mentor);
 									}}
 								>
-									<div className="absolute bottom-0 z-20 w-full ">
+									{!isActive && (
+										<div className="mx-4 absolute bottom-0 z-20 flex bg-white text-start flex-col  p-4 gap-1 transtion-all cursor-pointer">
+											<h3 className="text-2xl font-bold flex items-center">
+												{mentor.name}
+												<i className="fas fa-badge-check text-xs pl-1 pb-4 text-accent" />
+											</h3>
+											<div className="flex text-sm items-center gap-2 font-light">
+												<p>{mentor.branch}</p>
+												<p>{mentor.institution}</p>
+											</div>
+											<p className="text-sm font-light flex items-center gap-2">
+												<span className="font-semibold">
+													Expertise:
+												</span>
+												{mentor.expertise}
+											</p>
+										</div>
+									)}
+									<motion.div
+										className="absolute bottom-0 z-20 w-full"
+										initial={false}
+										animate={
+											isActive
+												? { opacity: 1, y: 0 }
+												: { opacity: 1, y: 120 }
+										}
+										transition={{
+											duration: 0.35,
+											ease: "easeOut",
+										}}
+									>
 										<div className="flex bg-white text-start flex-col mx-4 p-4 gap-1 transtion-all cursor-pointer">
-											<div className="hidden items-center gap-2 group-hover:flex">
+											{/* Rating - only visible when active */}
+											<div
+												className={`${
+													isActive ? "flex" : "hidden"
+												} items-center gap-2`}
+											>
 												<span className="text-sm font-semibold">
 													Rating:
 												</span>
@@ -272,6 +317,7 @@ const FindMentors = () => {
 														})}
 												</div>
 											</div>
+											{/* Always visible info */}
 											<h3 className="text-2xl font-bold flex items-center">
 												{mentor.name}
 												<i className="fas fa-badge-check text-xs pl-1 pb-4 text-accent" />
@@ -286,7 +332,14 @@ const FindMentors = () => {
 												</span>
 												{mentor.expertise}
 											</p>
-											<div className="hidden transition-all flex-col gap-4 pt-2 group-hover:flex">
+											{/* Description and View button - only visible when active */}
+											<div
+												className={`${
+													isActive
+														? "flex flex-col gap-4 pt-2"
+														: "hidden"
+												} transition-all`}
+											>
 												<p className="text-sm font-light text-start">
 													{mentor.description}
 												</p>
@@ -295,7 +348,7 @@ const FindMentors = () => {
 												</button>
 											</div>
 										</div>
-									</div>
+									</motion.div>
 									<img
 										src={`/mentors/${mentor.profile_pic}`}
 										alt={`${mentor.name}'s profile`}

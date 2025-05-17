@@ -15,7 +15,7 @@ function Button(props: ButtonProps) {
 					: "bg-secondary-active text-white border border-border"
 			} ${rest.className}`}
 		>
-			<h2 className="font-[600]  text-lg">{children}</h2>
+			<h2 className="font-[600] text-lg">{children}</h2>
 			{icon && <i className={`far fa-${icon} text-lg`}></i>}
 		</button>
 	);

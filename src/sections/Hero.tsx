@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SentenceRotator } from "../components/SenteceRotator";
-// import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";git ad
 
 const Hero = () => {
 	// const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -143,9 +143,9 @@ const Hero = () => {
 						}}
 						className="z-[990] pointer-events-none flex"
 					>
-						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-[20rem] md:text-[147px]">
+						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-[10vw]">
 							know your <br />
-							<span className="font-[900] text-[21rem] md:text-[197px]">
+							<span className="font-[900] text-[13vw] ">
 								colleges
 							</span>
 						</h1>
@@ -153,9 +153,10 @@ const Hero = () => {
 					<br />
 					<br />
 					<br />
-					<div className="relative mt-auto flex items-center justify-between">
+					<br />
+					<div className="relative mt-auto flex items-end justify-between">
 						<button
-							className={`gap-2 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${
+							className={`gap-2 mb-8 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${
 								showOverlay
 									? "visible opacity-100"
 									: "invisible opacity-0"
@@ -165,7 +166,7 @@ const Hero = () => {
 							<i className="far fa-arrow-up-right" />
 						</button>
 						<div
-							className={` z-[20] bottom-10 right-30 p-4 duration-400 transition-all hidden md:block ${
+							className={`z-[20] bottom-10 right-30 p-4 duration-400 transition-all hidden md:block ${
 								showOverlay
 									? "visible opacity-100"
 									: "invisible opacity-0"

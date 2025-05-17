@@ -88,10 +88,10 @@ const LatestUpdates = () => {
 			<br />
 			<div className="">
 				{/* Tabs */}
-				<div className="flex items-center space-x-6 border-b-4 border-gray-300 pb-2 mb-6">
+				<div className="flex items-center space-x-6 border-b-4 border-gray-500  mb-6">
 					<button
 						onClick={() => setActiveTab("blogs")}
-						className={`text-xl font-semibold ${
+						className={`text-xl font-semibold translate-y-1 py-4 ${
 							activeTab === "blogs"
 								? "text-black border-b-4 border-black"
 								: "text-gray-700"
@@ -101,7 +101,7 @@ const LatestUpdates = () => {
 					</button>
 					<button
 						onClick={() => setActiveTab("podcasts")}
-						className={`text-xl font-semibold ${
+						className={`text-xl font-semibold py-4 translate-y-1 ${
 							activeTab === "podcasts"
 								? "text-black border-b-4 border-black"
 								: "text-gray-700"
@@ -118,11 +118,13 @@ const LatestUpdates = () => {
 							key={item.id}
 							className="bg-white rounded-2xl overflow-hidden shadow-md w-[300px]"
 						>
-							<img
-								src={item.image}
-								alt="cover"
-								className="w-full h-48 object-cover"
-							/>
+							<div className="m-4 rounded-xl overflow-hidden bg-red-500">
+								<img
+									src={item.image}
+									alt="cover"
+									className="w-full h-48 object-cover"
+								/>
+							</div>
 							<div className="p-4">
 								<h3 className="font-bold text-lg">
 									{item.title}
@@ -162,13 +164,11 @@ const LatestUpdates = () => {
 									whileTap={{ scale: 0.95 }}
 									className="flex items-center justify-between bg-yellow-300 px-6 py-4 rounded-2xl font-semibold text-black shadow-md transition"
 								>
-									<div className="flex items-center space-x-2">
-										<i
-											className={`fa ${item.icon} text-lg`}
-										></i>
+									<div className="flex items-center text-xl space-x-2">
+										<i className={`fa ${item.icon}`}></i>
 										<span>{item.title}</span>
 									</div>
-									<i className="fa fa-arrow-up-right-from-square"></i>
+									<i className="fa fa-arrow-up-right text-xl"></i>
 								</motion.a>
 							))}
 						</div>

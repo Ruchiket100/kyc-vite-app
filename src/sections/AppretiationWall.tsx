@@ -63,10 +63,10 @@ const AppretiationWall = () => {
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 			}}
-			className="px-30 w-full h-[42rem] flex items-center justify-center"
+			className="px-30 w-full h-[50rem] flex items-center justify-center"
 		>
 			<div className="flex flex-col gap-4 items-center">
-				<h1 className="text-5xl font-bold">
+				<h1 className="text-6xl font-bold">
 					Appreciation
 					<br />
 					<span className="flex gap-6 items-center">
