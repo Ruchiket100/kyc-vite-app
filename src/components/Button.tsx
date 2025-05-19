@@ -9,7 +9,7 @@ function Button(props: ButtonProps) {
 	return (
 		<button
 			{...rest}
-			className={`flex flex-row gap-3 px-6 py-2 transition-all cursor-pointer text-center flex items-center justify-between rounded-full ${
+			className={`flex flex-row gap-3 px-6 py-2 transition-all cursor-pointer text-center items-center justify-between rounded-full ${
 				accent
 					? "bg-accent text-black hover:bg-accent-active"
 					: "bg-secondary-active text-white border border-border"

@@ -116,12 +116,21 @@ const Hero = () => {
 
 	return (
 		<div
-			className={`relative px-4 md:px-30 flex flex-col overflow-hidden  h-[74vh] w-full bg-[#c3fddc] transition-all duration-75`}
+			className={`relative px-4 md:px-30 flex flex-col overflow-hidden h-full  min-h-[49rem] w-full bg-[#c3fddc] transition-all duration-75`}
 		>
 			<div className="relative  w-full h-full z-[100]">
-				<div className=" z-30 my-auto w-full h-full mt-14">
+				<div className="z-30 my-auto w-full h-full mt-14">
+					<div
+						className={` z-[20] p-4 duration-400 transition-all md:hidden  ${
+							showOverlay
+								? "visible opacity-100"
+								: "invisible opacity-0"
+						}`}
+					>
+						<SentenceRotator />
+					</div>
 					<p
-						className={`text-black md:text-2xl pb-4 transition-all duration-200 ${
+						className={`text-black mt-10 md:mt-0 text-sm md:text-2xl pb-4 transition-all duration-200 ${
 							showOverlay
 								? "visible opacity-100 translate-y-0"
 								: "invisible opacity-0 -translate-y-10"
@@ -143,32 +152,23 @@ const Hero = () => {
 						}}
 						className="z-[990] pointer-events-none flex"
 					>
-						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-5xl md:text-[10vw]">
-							know your <br />
-							<span className="font-[900] text-6xl md:text-[13vw] ">
+						<h1 className=" text-black uppercase tracking-tight leading-[0.83] font-[900] text-7xl md:text-[10vw]">
+							know <br className="md:hidden" />
+							your <br />
+							<span className="font-[900] text-7xl md:text-[13vw] ">
 								colleges
 							</span>
 						</h1>
 					</motion.div>
 					<br />
 					<br />
-					<br />
-					<br />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
-					<br className="block md:hidden" />
 					<br className="block md:hidden" />
 					<br className="block md:hidden" />
 					<br className="block md:hidden" />
 					<br className="block md:hidden" />
 					<div className="relative mt-auto flex items-end justify-between">
 						<button
-							className={`gap-2 mb-8 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${
+							className={`gap-2 md:mb-14 bg-accent/50 backdrop-blur-sm flex items-center rounded-full z-[20] px-6 py-2 font-extrabold text-2xl border border-black duration-200  transition-all cursor-pointer ${
 								showOverlay
 									? "visible opacity-100"
 									: "invisible opacity-0"
@@ -212,14 +212,18 @@ const Hero = () => {
 			</div>
 			{showOverlay && (
 				<motion.svg
-					width="600"
-					height="600"
+					width={isMobile ? "400" : "600"}
+					height={isMobile ? "400" : "600"}
 					viewBox="0 0 362 362"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 					className="absolute md:top-20 md:left-80 z-[9999] mix-blend-difference"
 					initial={{ y: 500, opacity: 0, rotate: 0 }}
-					animate={{ y: 0, opacity: 1 }}
+					animate={
+						isMobile
+							? { y: 210, left: -40, opacity: 1 }
+							: { y: 0, opacity: 1 }
+					}
 					transition={{
 						type: "spring",
 						stiffness: 100,

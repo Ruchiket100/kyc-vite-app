@@ -21,7 +21,7 @@ export const SentenceRotator = () => {
 	}, []);
 
 	return (
-		<div className="relative h-[13vh] w-[600px] overflow-hidden">
+		<div className="relative h-[5rem] md:min-h-[10rem] md:w-[600px] overflow-hidden">
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={activeIndex}
@@ -30,7 +30,7 @@ export const SentenceRotator = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: direction === "up" ? -150 : 150, opacity: 0 }}
 					transition={{ duration: 0.8, ease: "easeInOut" }}
-					className="absolute w-full text-4xl font-extrabold text-end"
+					className="absolute w-full text-md md:text-4xl font-extrabold text-end"
 				>
 					{sentences[activeIndex].split("\n").map((line, i) => (
 						<span key={i} className="block">
